@@ -16,5 +16,8 @@ namespace C_GSB_Frais.Business
             this.id = id;
             this.libelle = libelle;
         }
+
+        public int Id { get => id; set => id = value; }
+        public string Libelle { get => libelle; set => libelle = value; }
     }
 }
