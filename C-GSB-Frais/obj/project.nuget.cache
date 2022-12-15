@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FxBIqBXhHnyeLJkWGeMp9Z6ITRw3ee+bJch93HNmamdvzB9GMRd4ghZaOjHyMnDGH2KA3AqysPTw8TEGhdbHGw==",
+  "dgSpecHash": "hX2IBCP8AgTHe4amoKrT8qkjmtDuxthNWVn/b1WNiLOHXyYWPE9lJPCMiz1gQw1C15aUZfgvB2mog3TL02pfHA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kazut\\source\\repos\\C-GSB-Frais\\C-GSB-Frais\\C-GSB-Frais.csproj",
+  "projectFilePath": "C:\\Users\\kazut\\source\\repos\\C-GSB-Frais_2022-2023\\C-GSB-Frais\\C-GSB-Frais.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kazut\\.nuget\\packages\\google.protobuf\\3.19.4\\google.protobuf.3.19.4.nupkg.sha512",
     "C:\\Users\\kazut\\.nuget\\packages\\k4os.compression.lz4\\1.2.6\\k4os.compression.lz4.1.2.6.nupkg.sha512",

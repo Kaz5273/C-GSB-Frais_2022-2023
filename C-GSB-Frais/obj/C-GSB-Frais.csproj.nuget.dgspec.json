@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kazut\\source\\repos\\C-GSB-Frais\\C-GSB-Frais\\C-GSB-Frais.csproj": {}
+    "C:\\Users\\kazut\\source\\repos\\C-GSB-Frais_2022-2023\\C-GSB-Frais\\C-GSB-Frais.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kazut\\source\\repos\\C-GSB-Frais\\C-GSB-Frais\\C-GSB-Frais.csproj": {
+    "C:\\Users\\kazut\\source\\repos\\C-GSB-Frais_2022-2023\\C-GSB-Frais\\C-GSB-Frais.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kazut\\source\\repos\\C-GSB-Frais\\C-GSB-Frais\\C-GSB-Frais.csproj",
+        "projectUniqueName": "C:\\Users\\kazut\\source\\repos\\C-GSB-Frais_2022-2023\\C-GSB-Frais\\C-GSB-Frais.csproj",
         "projectName": "C-GSB-Frais",
-        "projectPath": "C:\\Users\\kazut\\source\\repos\\C-GSB-Frais\\C-GSB-Frais\\C-GSB-Frais.csproj",
+        "projectPath": "C:\\Users\\kazut\\source\\repos\\C-GSB-Frais_2022-2023\\C-GSB-Frais\\C-GSB-Frais.csproj",
         "packagesPath": "C:\\Users\\kazut\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kazut\\source\\repos\\C-GSB-Frais\\C-GSB-Frais\\obj\\",
+        "outputPath": "C:\\Users\\kazut\\source\\repos\\C-GSB-Frais_2022-2023\\C-GSB-Frais\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kazut\\AppData\\Roaming\\NuGet\\NuGet.Config",
