@@ -24,9 +24,9 @@ namespace C_GSB_Frais.Models
         private void Initialize()
         {
             server = "localhost";
-            database = "gbs_frais_symfony";
+            database = "gsb_frais_symfony";
             uid = "root";
-            password = ""; //&6HAUTdanslaFauré
+            password = "&6HAUTdanslaFauré"; //&6HAUTdanslaFauré
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
             connection = new MySqlConnection(connectionString);

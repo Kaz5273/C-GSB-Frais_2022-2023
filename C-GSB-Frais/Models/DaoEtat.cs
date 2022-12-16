@@ -21,42 +21,44 @@ namespace C_GSB_Frais.Models
         public void Insert(Etat unEtat)
         {
             string values ="(" + unEtat.Id + ", '" + unEtat.Libelle + "')";
-            unDbal.Insert("Etat", values);
+            unDbal.Insert("etat", values);
         }
 
-        public void Update(Etat unEtat)
-        {
-            string values = " libelle= '" + unEtat.Libelle + "' ";
-            string condition = "id= " + unEtat.Id + " ";
-            unDbal.Update("Etat", values, condition);
+        public void Update(Etat unEtat, string values)
+        { 
+            string condition = " id= " + unEtat.Id + " ";
+            unDbal.Update("etat ", values, condition);
         }
 
         public void Delete(Etat unEtat)
         {
             string values = "id= " + unEtat.Id;
-            unDbal.Delete("Etat", values);
+            unDbal.Delete("etat", values);
         }
 
         public List<Etat> SelectAll() 
         {
             List<Etat> listEtat= new List<Etat>();
-            DataTable myTable = this.unDbal.SelectAll("Etat");
+            DataTable myTable = this.unDbal.SelectAll("etat");
 
             foreach (DataRow r in myTable.Rows)
             {
-                listEtat.Add(new Etat((int)r["id"], (string)r["libelle"]);
+                listEtat.Add(new Etat((int)r["id"], (string)r["libelle"]));
             }
             return listEtat;
         }
 
-        //public Etat SelectedByName(string libelleEtat)
-        //{
-
-        //}
+        public Etat SelectedByName(string libelleEtat)
+        {
+            DataTable result = new DataTable();
+            result = this.unDbal.SelectByField("etat ", " libelle = '" + libelleEtat.Replace("'", "''") + "'");
+            Etat foundEtat = new Etat((int)result.Rows[0]["id"], (string)result.Rows[0]["libelle"]);
+            return foundEtat;
+        }
 
         public Etat SelectedById(int idEtat)
         {
-            DataRow result = this.unDbal.SelectById("Etat", idEtat);
+            DataRow result = this.unDbal.SelectById("etat", idEtat);
             return new Etat((int)result["id"], (string)result["libelle"]);
         }
 

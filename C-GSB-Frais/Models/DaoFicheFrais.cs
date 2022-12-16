@@ -11,52 +11,58 @@ namespace C_GSB_Frais.Models
     public class DaoFicheFrais
     {
         private Dbal unDbal;
+        private DaoUser unDaoUser;
+        private DaoEtat unDaoEtat;
 
-        public DaoFicheFrais(Dbal unDbal)
+        public DaoFicheFrais(Dbal unDbal, DaoUser unDaoUser, DaoEtat unDaoEtat)
         {
             this.unDbal = unDbal;
+            this.unDaoUser = unDaoUser;
+            this.unDaoEtat = unDaoEtat;
         }
 
         public void Insert(FicheFrais uneficheFrais)
         {
-            string values = "(" + uneficheFrais.Id + ", '" + uneficheFrais.User + "' , '" + uneficheFrais.Etat + "' ," + uneficheFrais.Nb_justificatifs + ", '" + uneficheFrais.Date_modif + "' , '" + uneficheFrais.Montant + "' , '" + uneficheFrais.Mois + "')";
-            unDbal.Insert("FicheFrais", values);
+            string values = "(" + uneficheFrais.Id + ", " + uneficheFrais.User.Id + ", " + uneficheFrais.Etat.Id + ", " + uneficheFrais.Nb_justificatifs + ", '" + uneficheFrais.Date_modif.ToString("yyyy-MM-dd") + "', '" + uneficheFrais.Montant.ToString().Replace(",", ".") + "' , '" + uneficheFrais.Mois + "')";
+            unDbal.Insert("fiche_frais", values);
         }
 
-        public void Update(FicheFrais uneFicheFrais)
+        public void Update(FicheFrais uneFicheFrais, string values)
         {
-            string values = " user= '" + uneFicheFrais.User + "', " + "etat= " + uneFicheFrais.Etat + "', " + "nb_justificatifs= " + uneFicheFrais.Nb_justificatifs + "', " + "date_modif= " + uneFicheFrais.Date_modif + "', " + "montant= " + uneFicheFrais.Montant + "', " + "mois= '" + uneFicheFrais.Mois + "' ";
+
             string conditon = "id= " + uneFicheFrais.Id + " ";
-            unDbal.Update("FicheFrais", values, conditon);
+            unDbal.Update("fiche_frais", values, conditon);
         }
 
         public void Delete(FicheFrais uneFicheFrais)
         {
             string value = "id= " + uneFicheFrais.Id;
-            unDbal.Delete("FicheFrais", value);
+            unDbal.Delete("fiche_frais", value);
         }
         public List<FicheFrais> SelectAll()
         {
             List<FicheFrais> listFicheFrais = new List<FicheFrais>();
-            DataTable myTable = this.unDbal.SelectAll("FicheFrais");
+            DataTable myTable = this.unDbal.SelectAll("fiche_frais");
+            
 
             foreach (DataRow r in myTable.Rows)
             {
-                listFicheFrais.Add(new FicheFrais((int)r["id"], (User)r["user"], (Etat)r["etat"], (int)r["nb_justificatifs"], (DateTime)r["date_modif"], (double)r["montant"], (string)r["mois"]));
+                User unUser = unDaoUser.SelectById((int)r["user_id"]);
+                Etat unEtat = unDaoEtat.SelectedById((int)r["etat_id"]);
+                listFicheFrais.Add(new FicheFrais((int)r["id"], unUser, unEtat, (int)r["nb_justificatifs"], (DateTime)r["date_modif"], (decimal)r["montant"], (string)r["mois"]));
             }
 
             return listFicheFrais;
         }
 
-        //public FicheFrais SelectByName(string nameFicheFrais)
-        //{
-
-        //}
 
         public FicheFrais SelectById(int idFicheFrais)
         {
+            
             DataRow result = this.unDbal.SelectById("FicheFrais", idFicheFrais);
-            return new FicheFrais((int)result["id"], (User)result["user"], (Etat)result["etat"], (int)result["nb_justificatifs"], (DateTime)result["date_modif"], (double)result["montant"], (string)result["mois"]);
+            User unUser = unDaoUser.SelectById((int)result["user_id"]);
+            Etat unEtat = unDaoEtat.SelectedById((int)result["etat_id"]);
+            return new FicheFrais((int)result["id"], unUser, unEtat, (int)result["nb_justificatifs"], (DateTime)result["date_modif"], (decimal)result["montant"], (string)result["mois"]);
 
         }
 

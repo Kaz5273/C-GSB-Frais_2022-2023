@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kazut\\source\\repos\\C-GSB-Frais_2022-2023\\C-GSB-Frais\\C-GSB-Frais.csproj": {}
+    "C:\\Users\\allard.kazuki\\source\\repos\\C-GSB-Frais_2022-2023\\C-GSB-Frais\\C-GSB-Frais.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kazut\\source\\repos\\C-GSB-Frais_2022-2023\\C-GSB-Frais\\C-GSB-Frais.csproj": {
+    "C:\\Users\\allard.kazuki\\source\\repos\\C-GSB-Frais_2022-2023\\C-GSB-Frais\\C-GSB-Frais.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kazut\\source\\repos\\C-GSB-Frais_2022-2023\\C-GSB-Frais\\C-GSB-Frais.csproj",
+        "projectUniqueName": "C:\\Users\\allard.kazuki\\source\\repos\\C-GSB-Frais_2022-2023\\C-GSB-Frais\\C-GSB-Frais.csproj",
         "projectName": "C-GSB-Frais",
-        "projectPath": "C:\\Users\\kazut\\source\\repos\\C-GSB-Frais_2022-2023\\C-GSB-Frais\\C-GSB-Frais.csproj",
-        "packagesPath": "C:\\Users\\kazut\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kazut\\source\\repos\\C-GSB-Frais_2022-2023\\C-GSB-Frais\\obj\\",
+        "projectPath": "C:\\Users\\allard.kazuki\\source\\repos\\C-GSB-Frais_2022-2023\\C-GSB-Frais\\C-GSB-Frais.csproj",
+        "packagesPath": "C:\\Users\\allard.kazuki\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\allard.kazuki\\source\\repos\\C-GSB-Frais_2022-2023\\C-GSB-Frais\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kazut\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\allard.kazuki\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -51,8 +51,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -64,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

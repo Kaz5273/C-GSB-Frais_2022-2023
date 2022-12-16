@@ -21,26 +21,25 @@ namespace C_GSB_Frais.Models
         public void Insert(FraisForfait unFraisForfait)
         {
             string values = "(" + unFraisForfait.Id + ", '" + unFraisForfait.Montant + "' ,'" + unFraisForfait.Libelle + "')";
-            unDbal.Insert("fraisForfait", values);
+            unDbal.Insert("frais_forfait", values);
         }
 
-        public void Update(FraisForfait unFraisForfait)
+        public void Update(FraisForfait unFraisForfait, string values)
         {
-            string values = "montant= '" + unFraisForfait.Montant + "' ," + "libelle= '" + unFraisForfait.Libelle + "' ";
             string condition = "id= " + unFraisForfait.Id + " ";
-            unDbal.Update("fraiForfait", values, condition);
+            unDbal.Update("frais_forfait", values, condition);
         }
 
         public void Delete(FraisForfait unFraisForfait)
         {
             string values = "id= " + unFraisForfait.Id;
-            unDbal.Delete("FraisForfait", values);
+            unDbal.Delete("frais_forfait", values);
         }
 
         public List<FraisForfait> SelectAll()
         {
             List<FraisForfait> listFraisForfait = new List<FraisForfait>();
-            DataTable myTable = this.unDbal.SelectAll("fraisForfait");
+            DataTable myTable = this.unDbal.SelectAll("frais_forfait");
 
             foreach (DataRow r in myTable.Rows)
             {
@@ -50,11 +49,17 @@ namespace C_GSB_Frais.Models
             return listFraisForfait;
         }
 
-        //public FraisForfait SelectByName(string nameFraisForfait) { }
+        public FraisForfait SelectByName(string nameFraisForfait) 
+        {
+            DataTable result = new DataTable();
+            result = this.unDbal.SelectByField("frais_forfait ", " libelle= '" + nameFraisForfait.Replace("'", "''") + "'");
+            FraisForfait foundFraisForfait = new FraisForfait((int)result.Rows[0]["id"], (double)result.Rows[0]["montant"], (string)result.Rows[0]["libelle"]);
+            return foundFraisForfait;
+        }
 
         public FraisForfait SelectById(int idFraisForfait)
         {
-            DataRow result = this.unDbal.SelectById("fraisForfait", idFraisForfait);
+            DataRow result = this.unDbal.SelectById("frais_forfait", idFraisForfait);
             return new FraisForfait((int)result["id"], (double)result["montant"], (string)result["libelle"]);
 
         }

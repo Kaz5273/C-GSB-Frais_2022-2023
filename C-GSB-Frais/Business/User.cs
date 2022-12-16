@@ -11,7 +11,7 @@ namespace C_GSB_Frais.Business
     {
         private int id;
         private string login;
-        private string roles;
+
         private string password;
         private string nom;
         private string prenom;
@@ -21,11 +21,10 @@ namespace C_GSB_Frais.Business
         private string ville;
         private string old_id;
 
-        public User(int id, string login, string role, string password, string nom, string prenom, string adresse, string cp, DateTime date_embauche, string ville, string old_id ) 
+        public User(int id, string login, string password, string nom, string prenom, string adresse, string cp, DateTime date_embauche, string ville, string old_id ) 
         {
             this.id = id;
             this.login = login;
-            this.roles = role;
             this.password = password;
             this.nom = nom;
             this.prenom = prenom;
@@ -38,7 +37,6 @@ namespace C_GSB_Frais.Business
 
         public int Id { get => id; set => id = value; }
         public string Login { get => login; set => login = value; }
-        public string Roles { get => roles; set => roles = value; }
         public string Password { get => password; set => password = value; }
         public string Nom { get => nom; set => nom = value; }
         public string Prenom { get => prenom; set => prenom = value; }

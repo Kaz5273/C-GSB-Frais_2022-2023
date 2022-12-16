@@ -13,10 +13,10 @@ namespace C_GSB_Frais.Business
         private Etat etat;
         private int nb_justificatifs;
         private DateTime date_modif;
-        private double montant;
+        private decimal montant;
         private string mois;
 
-        public FicheFrais(int id, User user, Etat etat, int nb_justificatifs, DateTime date_modif, double montant, string mois) 
+        public FicheFrais(int id, User user, Etat etat, int nb_justificatifs, DateTime date_modif, decimal montant, string mois) 
         {
             this.id = id;
             this.user = user;
@@ -32,7 +32,7 @@ namespace C_GSB_Frais.Business
         public Etat Etat { get => etat; set => etat = value; }
         public int Nb_justificatifs { get => nb_justificatifs; set => nb_justificatifs = value; }
         public DateTime Date_modif { get => date_modif; set => date_modif = value; }
-        public double Montant { get => montant; set => montant = value; }
+        public decimal Montant { get => montant; set => montant = value; }
         public string Mois { get => mois; set => mois = value; }
     }
 }
